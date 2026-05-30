@@ -1,0 +1,34 @@
+:root {
+  /* Surface Colors */
+  --bg-main: #0b0a0a; /* Deep black background */
+  --bg-surface: #1a1a1a; /* Obsidian card/header surface */
+
+  /* Text Colors */
+  --text-primary: #ffffff; /* Crisp white headers */
+  --text-secondary: #e5e7eb; /* Soft off-white body */
+  --text-muted: rgba(229, 231, 187, 0.6); /* Dimmed subtext */
+
+  /* Theme Accents (Neon Amber) */
+  --accent-color: #f59e0b; /* Main Amber */
+  --accent-hover: #fbbf24; /* Brighter Gold for hovers */
+  --accent-glow: rgba(245, 158, 11, 0.1); /* Soft transparent background */
+  --accent-border: rgba(245, 158, 11, 0.2); /* Alert card borders */
+
+  /* Border Lines */
+  --border-subtle: rgba(255, 255, 255, 0.07);
+}
+/* Wipe out default browser spacing defaults */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0b0a0a; /* Matches your --bg-main token exactly */
+}
+
+/* Ensure all elements calculate their borders and padding correctly */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

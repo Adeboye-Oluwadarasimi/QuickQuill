@@ -1,0 +1,205 @@
+/* The outermost Link wrapper */
+/* 1. Update the outermost Link wrapper */
+.noteCard {
+  display: block;
+  text-decoration: none;
+  background-color: var(--bg-surface);
+  border-radius: 12px;
+  border-top: 4px solid var(--accent-color);
+  border-left: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+
+  /* 🌟 ADD THIS: Forces every card container to have the exact same starting base height */
+  height: 180px;
+}
+
+/* 2. Update the internal card spacing wrapper */
+.noteContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+
+  /* 🌟 ADD THIS: Ensures the internal flexbox container fills 100% of the noteCard's height */
+  height: 100%;
+}
+
+/* 3. Update the Note Content Body */
+.noteContent {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+
+  /* ⚡ The Truncation Magic */
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 👈 Change this number to show exactly 1, 2, or 3 lines max */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+/* Hover state matching the ThinkBoard glow mechanics */
+.noteCard:hover {
+  transform: translateY(-4px); /* Clean subtle lift action */
+  border-top-color: var(--accent-hover); /* Brighter Gold accent on hover */
+  box-shadow: 0 10px 20px var(--accent-glow); /* Soft neon amber underglow shadow */
+}
+
+/* Note Title */
+.noteTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary); /* Crisp white header strings */
+  margin: 0;
+}
+
+/* The Footer Row layout */
+.noteFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+/* Created At Date String */
+.date {
+  font-size: 0.8rem;
+  color: var(--text-muted); /* Dimmed subtext styling code */
+}
+
+/* Action button flex wrapper */
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Shared configuration rules for functional dashboard utility icons */
+.editButton,
+.deleteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 6px;
+  color: var(--text-muted);
+  transition: all 0.15s ease;
+}
+
+/* Edit Pen Interaction */
+.editButton:hover {
+  color: var(--accent-hover);
+  background-color: var(--accent-glow);
+}
+
+/* Delete Trash Interaction */
+.deleteButton:hover {
+  color: #ef4444; /* Clean destructive red warning color */
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+/* Lock Lucide icons to matching grid structural layouts */
+.editButton svg,
+.deleteButton svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+/* Modal Content */
+.modalContent {
+  background-color: var(--bg-surface);
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Modal Close Button */
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalClose:hover {
+  color: var(--text-primary);
+  background-color: var(--border-subtle);
+}
+
+.modalClose svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Modal Title */
+.modalTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+}
+
+/* Modal Body */
+.modalBody {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+/* Modal Text */
+.modalText {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}

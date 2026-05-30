@@ -1,0 +1,53 @@
+/* Full viewport background wrapper */
+.screenWrapper {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centralized page content bounding container */
+.mainContainer {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px; /* Constrains dashboard width on ultra-wide screens */
+  margin: 0 auto; /* Centers the workspace block horizontally */
+  padding: 2rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* The Responsive Note Grid Matrix */
+.contentGrid {
+  display: grid;
+  /* Automatically packs cards side-by-side, wrapping them if they drop below 280px */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem; /* Spaces the cards cleanly */
+  width: 100%;
+}
+
+/* Theme-matching neon pulsing loading state */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--accent-color); /* Main Amber #f59e0b */
+  letter-spacing: 0.05em;
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+/* Clean, modern ambient neon loading animation */
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+    text-shadow: 0 0 0px transparent;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 12px var(--accent-color); /* Soft amber glow overlay */
+  }
+}

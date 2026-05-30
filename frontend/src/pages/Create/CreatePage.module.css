@@ -1,0 +1,162 @@
+/* Translates 'min-h-screen'—acts as a clean, transparent layout pass-through 
+   so your index.css global ambient radial glow background shows straight through! */
+.screenWrapper {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Translates 'container mx-auto px-4 py-8' */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem; /* 32px top/bottom, 16px left/right spacing */
+}
+
+/* Translates 'max-w-2xl mx-auto'—keeps the form tightly centered on desktop screens */
+.contentWidthGuard {
+  max-width: 42rem; /* 672px width boundary */
+  margin: 0 auto;
+}
+
+/* Translates 'btn btn-ghost mb-6' layout along with your custom text styling */
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--accent-color); /* Amber pop on link highlights */
+}
+
+.backIcon {
+  display: inline-block;
+}
+
+.pageTitle {
+  color: #ffffff;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  font-family: serif; /* Matches your premium QuickQuill headline fonts */
+}
+
+/* Form Layout Components matching QuickQuill UI cards */
+.noteForm {
+  background-color: #1a1a1a; /* Matches your exact --bg-surface note cards */
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border-top: 3px solid var(--accent-color); /* High-end amber top ridge accents */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.inputGroup label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Clean UI styles for input boards and content boxes */
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  background-color: #0b0a0a; /* Deep contrast inner frames */
+  border: 1px solid #333;
+  border-radius: 0.375rem;
+  padding: 0.75rem 1rem;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: var(
+    --accent-color
+  ); /* Glow amber focus tracking ring outlines */
+}
+
+/* Large QuickQuill CTA Action Buttons */
+.submitButton {
+  background-color: var(--accent-color); /* Your bold Amber button */
+  color: #000000;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.2s;
+  margin-top: 0.5rem;
+}
+
+.submitButton:hover {
+  opacity: 0.9;
+}
+
+.submitButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loadingFlexWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+}
+
+.dotLoader {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.dotLoader span {
+  width: 6px;
+  height: 6px;
+  background-color: #000000;
+  border-radius: 50%;
+  display: inline-block;
+
+  animation: waveBounce 1.4s infinite ease-in-out both;
+}
+
+.dotLoader span:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.dotLoader span:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+@keyframes waveBounce {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}

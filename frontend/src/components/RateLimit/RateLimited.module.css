@@ -1,0 +1,80 @@
+/* Centers the layout container on the page */
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+/* The card panel box using global tokens */
+.alertBox {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--accent-border);
+  border-radius: 8px;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.3),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+/* Handles responsive alignment (Mobile first) */
+.flexLayout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+}
+
+/* Circular background badging for the vector icon */
+.iconContainer {
+  flex-shrink: 0;
+  background-color: var(--accent-glow);
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon coloring */
+.warningIcon {
+  color: var(--accent-color);
+}
+
+/* Responsive alignment container for typography layout */
+.textContent {
+  flex: 1;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 0.5rem 0;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 0.25rem 0;
+  line-height: 1.5;
+}
+
+.subtext {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Desktop layout override shift */
+@media (min-width: 768px) {
+  .flexLayout {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .textContent {
+    text-align: left;
+  }
+}
