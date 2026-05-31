@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 //middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://quick-quill-nine.vercel.app"],
+    origin: ["http://localhost:5173", "https://quickquill-notes.vercel.app/"],
   }),
 );
 app.use(express.json());
